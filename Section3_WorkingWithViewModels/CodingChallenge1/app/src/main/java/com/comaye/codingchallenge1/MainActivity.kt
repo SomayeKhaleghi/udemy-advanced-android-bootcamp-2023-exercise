@@ -17,15 +17,18 @@ private lateinit var binding: ActivityMainBinding
         viewModelFactory = MainActivityViewModelFactory(125)
         viewModel = ViewModelProvider(this,viewModelFactory).get(MainActivityViewModel::class.java)
 
-        binding.input.hint = (viewModel.GetInput().toString())
-        binding.output.text =viewModel.GetOutput().toString()
+
+        
+        binding.input.hint = (viewModel.GetTotal().toString())
+        binding.output.text =viewModel.GetTotal().toString()
 
         binding.button.setOnClickListener {
-            binding.output.text =viewModel.Add(binding.input.text.toString().toInt()).toString()
-            binding.input.hint = (viewModel.GetInput().toString())
+            viewModel.setTotal(binding.input.text.toString().toInt())
 
+
+            binding.output.text = viewModel.GetTotal().toString()
+            binding.input.hint = viewModel.GetTotal().toString()
         }
-
     }
 //------------------------------------------------------------------------------------------------------
 }
