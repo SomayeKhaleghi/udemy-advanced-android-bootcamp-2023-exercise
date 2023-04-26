@@ -1,17 +1,20 @@
 package com.comaye.codingchallenge1
 
 import androidx.lifecycle.ViewModel
-class MainActivityViewModel: ViewModel() {
+class MainActivityViewModel(startingInput : Int): ViewModel(){
 //-----------------------------------------------------------------------------------------
     private var input: Int = 0
 
     private var output: Int = 0
 
     //-----------------------------------------------------------------------------------------
+    init {
+        input = startingInput
+    }
+    //-----------------------------------------------------------------------------------------
     fun GetInput(): Int {
         return input
     }
-
     //-----------------------------------------------------------------------------------------
     fun Add(input:Int): Int {
 
@@ -20,7 +23,5 @@ class MainActivityViewModel: ViewModel() {
 
         return output
     }
-
-
 //-----------------------------------------------------------------------------------------
 }
