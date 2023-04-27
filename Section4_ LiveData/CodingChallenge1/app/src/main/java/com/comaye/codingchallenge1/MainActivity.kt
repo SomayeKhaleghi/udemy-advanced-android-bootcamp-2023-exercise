@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.comaye.codingchallenge1.databinding.ActivityMainBinding
 import androidx.databinding.DataBindingUtil.setContentView
 import androidx.lifecycle.Observer
-
 //------------------------------------------------------------------------------------------------------
 class MainActivity : AppCompatActivity() {
 //------------------------------------------------------------------------------------------------------
@@ -20,7 +19,7 @@ private lateinit var binding: ActivityMainBinding
         viewModel = ViewModelProvider(this,viewModelFactory).get(MainActivityViewModel::class.java)
 
         viewModel.countData.observe(this, Observer {
-
+            binding.
         })
 
         binding.button.setOnClickListener {
