@@ -19,11 +19,11 @@ private lateinit var binding: ActivityMainBinding
         viewModel = ViewModelProvider(this,viewModelFactory).get(MainActivityViewModel::class.java)
 
         viewModel.countData.observe(this, Observer {
-            binding.
+            binding.countText.text = it.toString()
         })
 
         binding.button.setOnClickListener {
-
+            viewModel.updateCount()
         }
     }
 //------------------------------------------------------------------------------------------------------
