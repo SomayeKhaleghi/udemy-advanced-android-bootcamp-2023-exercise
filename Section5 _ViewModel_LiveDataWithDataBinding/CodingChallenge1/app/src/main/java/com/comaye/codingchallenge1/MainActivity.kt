@@ -22,7 +22,7 @@ private lateinit var binding: ActivityMainBinding
             binding.countText.text = it.toString()
         })
 
-   /*     binding.button.setOnClickListener {
+       /*     binding.button.setOnClickListener {
             viewModel.updateCount()
         }
 
