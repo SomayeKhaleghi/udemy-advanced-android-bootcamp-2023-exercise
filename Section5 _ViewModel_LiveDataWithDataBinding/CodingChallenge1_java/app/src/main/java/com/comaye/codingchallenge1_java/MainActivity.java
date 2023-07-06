@@ -20,14 +20,15 @@ protected void onCreate(Bundle savedInstanceState){
 
     viewModel   =  new ViewModelProvider(this).get(MainActivityViewModel.class);
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-    final Observer<Integer> countObserver = new Observer<Integer>() {
+    binding.setViewmodel(viewModel);
+   /* final Observer<Integer> countObserver = new Observer<Integer>() {
         @Override
         public void onChanged(@Nullable final Integer newValue) {
             binding.txtNumber.setText(String.valueOf(newValue));
         }
-    };
+    };*/
 
-    viewModel.getCurrentCount().observe(this, countObserver);
+    //viewModel.getCurrentCount().observe(this, countObserver);
 
    binding.btnIncrease.setOnClickListener(new View.OnClickListener() {
        public void onClick(View v) {
