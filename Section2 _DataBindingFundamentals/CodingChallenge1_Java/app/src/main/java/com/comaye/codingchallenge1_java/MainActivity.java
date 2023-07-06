@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
-
 import com.comaye.codingchallenge1_java.databinding.ActivityMainBinding;
 //--------------------------------------------------------------------------------------------
 public class MainActivity extends AppCompatActivity {
