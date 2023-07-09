@@ -24,7 +24,7 @@
         android:id="@+id/txt_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@{viewmodel.currentCount}"
+        android:text="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,12 +37,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Click To Increase"
+        android:onClick="@{()->viewmodel.increaseCountNumber()}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_number"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintVertical_bias="0.426" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
 </layout>

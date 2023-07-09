@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.Observable;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
@@ -19,24 +20,18 @@ protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
 
     viewModel   =  new ViewModelProvider(this).get(MainActivityViewModel.class);
+    viewModel.getCurrentCount();
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
     binding.setViewmodel(viewModel);
-   /* final Observer<Integer> countObserver = new Observer<Integer>() {
+    MutableLiveData<Integer> myLivedata = viewModel.countLiveData;
+
+    myLivedata.observe(this, new Observer<Integer>() {
         @Override
-        public void onChanged(@Nullable final Integer newValue) {
-            binding.txtNumber.setText(String.valueOf(newValue));
+        public void onChanged(Integer integer){
+            binding.txtNumber.setText(String.valueOf(integer));
         }
-    };*/
+    });
 
-    //viewModel.getCurrentCount().observe(this, countObserver);
-
-   binding.btnIncrease.setOnClickListener(new View.OnClickListener() {
-       public void onClick(View v) {
-         viewModel.increaseCountNumber();
-
-           // binding.txtNumber.setText(String.valueOf(viewModel.getNewCountNumber()));
-       }
-   });
 }
 //---------------------------------------------------------------------
 }
