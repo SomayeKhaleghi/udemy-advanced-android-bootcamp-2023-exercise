@@ -1,8 +1,9 @@
 package com.somaye.myapplication
 
 import android.util.Log
+import javax.inject.Inject
 
-class SimCard constructor(private val serviceProvider:ServiceProvider) {
+class SimCard @Inject constructor(private val serviceProvider:ServiceProvider) {
     init {
         Log.i("MyTag", "SimCard  constructed")
     }
