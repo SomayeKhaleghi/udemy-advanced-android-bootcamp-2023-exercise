@@ -6,7 +6,7 @@ import dagger.Provides
 @Module
 class MemoryCardModule {
 
-    @Provides
+   @Provides
     fun providesMemoryCard():MemoryCard
     {
         return  MemoryCard()

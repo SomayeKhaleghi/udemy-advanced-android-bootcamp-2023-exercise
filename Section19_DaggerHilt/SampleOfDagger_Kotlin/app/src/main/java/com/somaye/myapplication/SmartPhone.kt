@@ -5,11 +5,12 @@ import javax.inject.Inject
 
 //import androidx.inj
 
-class SmartPhone @Inject constructor (private val battery:Battery, private val simCard:SimCard, private val memoryCard: MemoryCard) {
+class SmartPhone @Inject constructor (private val battery:Battery, private val simCard:SimCard, private val memoryCard: MemoryCard
+) {
     init {
         battery.getPower()
         simCard.getCommunication()
-        memoryCard.getSpaceAvailability()
+        //memoryCard.getSpaceAvailability()
         Log.i("MyTag", "Smart phone  constructed")
     }
 
